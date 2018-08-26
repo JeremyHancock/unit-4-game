@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="assets/javascript/jquery.js"></script>
-    <script src="assets/css/style.css"></script>
     <script src="assets/javascript/game.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <title>Crystal Game</title>
 </head>
 
 <body>
-    <var id="headerImage"></var>
-    <var id="instructions">Each of the crystals below is worth a random number of points <br> Click crystals to add to your total and figure out how to match the goal.</var><br>
+
+    <var id="instructions">Each of the crystals below is worth a random number of points, which will reset with each new game <br> Click crystals to add to your
+        total and figure out how to match the goal.</var><br>
     <h2>Try to match your score to this number:</h2>
-    <var id="goalScore">0</var><br><br><br>
-    <var id="ruby">Ruby</var><br>
-    <var id="diamond">Diamond</var><br>
-    <var id="emerald">Emerald</var><br>
-    <var id="saphire">Saphire</var><br>
-    <h2>This is your score:</h2>
-    <var id="yourScore">0</var>
-    <h2>Wins:</h2>
-    <var id="numOfWins">0</var>
-    <h2>Losses:</h2>
-    <var id="numOfLosses">0</var>
-    
+    <var id="goalScore" class="digits">0</var><br><br><br>
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="assets/images/ruby.png" id="ruby" class="crystal">
+        </div>
+        <div class="col-sm-3">
+            <img src="assets/images/emerald.png" id="emerald" class="crystal">
+        </div>
+        <div class="col-sm-3">
+            <img src="assets/images/diamond.png" id="diamond" class="crystal">
+        </div>
+        <div class="col-sm-3">
+            <img src="assets/images/saphire.png" id="saphire" class="crystal">
+        </div>
+    </div> <br> <br> <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>This is your score:</h3>
+            <var id="yourScore" class="digits">0</var>
+        </div>
+        <div class="col-sm-4">
+            <h3>Wins:</h3>
+            <var id="numOfWins" class="digits">0</var>
+        </div>
+        <div class="col-sm-4">
+            <h3>Losses:</h3>
+            <var id="numOfLosses" class="digits">0</var>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+}
+
+.crystal {
+    width: 50%;
+}
+
+.digits {
+    color: darkblue;
+    font-size: 36px;
+}
