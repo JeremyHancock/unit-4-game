@@ -3,52 +3,45 @@ $(document).ready(function () {
     function randomValue(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
+    // Creates a number of needed variables
     var wins = 0;
     var losses = 0;
     var currentScore = 0;
-    var rubyValue = (randomValue(1, 12));
-    var diamondValue = (randomValue(1, 12));
-    var emeraldValue = (randomValue(1, 12));
-    var saphireValue = (randomValue(1, 12));
-    console.log("Ruby value is " + rubyValue);
-    console.log("Diamond value is " + diamondValue);
-    console.log("Emerald value is " + emeraldValue);
-    console.log("Saphire value is " + saphireValue);
-    $("#yourScore").html(currentScore);
-    var goalScore = (randomValue(19, 120));
-    $("#goalScore").html(goalScore)
+    var rubyValue;
+    var diamondValue;
+    var emeraldValue;
+    var saphireValue;
+    var goalScore;
 
+    // a function to run each time the game needs to be reset
     function resetGame() {
-         rubyValue = (randomValue(1, 12));
-         diamondValue = (randomValue(1, 12));
-         emeraldValue = (randomValue(1, 12));
-         saphireValue = (randomValue(1, 12));
-        console.log("Ruby value is " + rubyValue);
-        console.log("Diamond value is " + diamondValue);
-        console.log("Emerald value is " + emeraldValue);
-        console.log("Saphire value is " + saphireValue);
+        // each crystal is assigned a randomValue from 1 to 12 using the randomValue function
+        rubyValue = (randomValue(1, 12));
+        diamondValue = (randomValue(1, 12));
+        emeraldValue = (randomValue(1, 12));
+        saphireValue = (randomValue(1, 12));
         $("#yourScore").html(currentScore);
-         goalScore = (randomValue(19, 120));
+        // creates the goal score using the randomValue function to assign a value between 19 and 120
+        goalScore = (randomValue(19, 120));
         $("#goalScore").html(goalScore)
-        console.log("The current score is " + currentScore);
-        console.log("The goal score is " + goalScore);
     }
     function checkForWin() {
         if (currentScore === goalScore) {
             wins++;
             $("#numOfWins").html(wins);
             currentScore = 0;
-            console.log("win")
             resetGame();
         }
         if (currentScore > goalScore) {
             losses++;
-            console.log("loss")
             $("#numOfLosses").html(losses);
             currentScore = 0;
             resetGame();
         }
     }
+
+    resetGame();
+
     $("#ruby").click(function () {
         $("#yourScore").html(currentScore + rubyValue);
         currentScore = currentScore + rubyValue;
@@ -70,7 +63,3 @@ $(document).ready(function () {
         checkForWin();
     });
 });
-// function to capture clicked crystal value and add it to currentScore
-// check for win and add win
-// check for loss and add loss
-// on click function
