@@ -1,12 +1,20 @@
 body {
     text-align: center;
+    cursor: default;
 }
-
+h2, #scoreRow{
+    background-color: rgb(17, 131, 36);
+    color: white;
+}
 .crystal {
     width: 50%;
+    cursor: pointer;
 }
 
 .digits {
-    color: darkblue;
     font-size: 36px;
+}
+
+#instructions {
+    color: black;
 }

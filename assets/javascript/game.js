@@ -20,6 +20,7 @@ $(document).ready(function () {
         diamondValue = (randomValue(1, 12));
         emeraldValue = (randomValue(1, 12));
         saphireValue = (randomValue(1, 12));
+        currentScore = 0;
         $("#yourScore").html(currentScore);
         // creates the goal score using the randomValue function to assign a value between 19 and 120
         goalScore = (randomValue(19, 120));
@@ -29,13 +30,13 @@ $(document).ready(function () {
         if (currentScore === goalScore) {
             wins++;
             $("#numOfWins").html(wins);
-            currentScore = 0;
+            $("#instructions").text("Your score totals " + currentScore + " and matches the goal! Congratulations, you've won! All of the crystals have been assigned new values and there is a new goal. Click a crystal to begin playing again.")
             resetGame();
         }
         if (currentScore > goalScore) {
             losses++;
             $("#numOfLosses").html(losses);
-            currentScore = 0;
+            $("#instructions").text("Your score totals " + currentScore + " and exceeds the goal of " + goalScore + ". You have lost the game! All of the crystals have been assigned new values and there is a new goal. Click a crystal to begin playing again.")
             resetGame();
         }
     }
